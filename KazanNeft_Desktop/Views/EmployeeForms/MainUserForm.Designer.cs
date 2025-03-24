@@ -43,6 +43,7 @@
             emergencyTable.RowHeadersWidth = 51;
             emergencyTable.Size = new Size(913, 373);
             emergencyTable.TabIndex = 0;
+            emergencyTable.CellClick += EmergencyTable_CellClick;
             // 
             // requestBtn
             // 
