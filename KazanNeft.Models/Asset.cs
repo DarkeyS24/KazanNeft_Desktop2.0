@@ -12,6 +12,6 @@ namespace KazanNeft.Models
         public int EmployeeId { get; set; }
         public int AssetGroupId { get; set; }
         public string Description { get; set; } = string.Empty;
-        public DateOnly WarrantyDate { get; set; }
+        public DateOnly? WarrantyDate { get; set; }
     }
 }

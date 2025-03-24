@@ -15,9 +15,9 @@ namespace KazanNeft.Models
         public int PriorityId { get; set; }
         public string DescriptionEmergency { get; set; } = string.Empty;
         public string OtherConsiderations { get; set; } = string.Empty;
-        public DateOnly EMReportDate { get; set; }
-        public DateOnly EMStartDate { get; set; }
-        public DateOnly EMEndDate { get; set; }
+        public DateOnly? EMReportDate { get; set; }
+        public DateOnly? EMStartDate { get; set; }
+        public DateOnly? EMEndDate { get; set; }
         public string TechnicianNote { get; set; } = string.Empty;
 
     }
