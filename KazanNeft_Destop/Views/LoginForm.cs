@@ -55,7 +55,11 @@ namespace KazanNeft_Destop
                         MainEmployeeForm empForm = new();
                         empForm.Show();
                     }
-                    
+
+                }
+                else
+                {
+                    MessageBox.Show("User not founded");
                 }
             }
                 
