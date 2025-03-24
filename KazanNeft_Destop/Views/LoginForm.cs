@@ -53,6 +53,8 @@ namespace KazanNeft_Destop
                     else
                     {
                         MainEmployeeForm empForm = new();
+                        IList<MainUserForm.EmergencyDataTable> data = repository.getAllTableData();
+                        empForm.setTable(data, emp);
                         empForm.Show();
                     }
 

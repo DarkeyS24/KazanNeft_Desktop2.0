@@ -17,7 +17,7 @@ namespace KazanNeft_Desktop.Repositories.EmergencyMaintenanceRepository
         }
         public IList<MainUserForm.EmergencyDataTable> getTableData(int id)
         {
-             IList< MainUserForm.EmergencyDataTable> list = (
+             return (
                 from em in db.EmergencyMaintenances
                 join a in db.Assets on em.AssetId equals a.Id
                 join e in db.Employees on a.EmployeeId equals e.Id
@@ -32,8 +32,23 @@ namespace KazanNeft_Desktop.Repositories.EmergencyMaintenanceRepository
                         .Count()
                 }
                 ).ToList();
-
-            return list;
+        }
+        
+        public IList<MainUserForm.EmergencyDataTable> getAllTableData()
+        {
+             return (
+                from em in db.EmergencyMaintenances
+                join a in db.Assets on em.AssetId equals a.Id
+                select new MainUserForm.EmergencyDataTable 
+                {
+                    AssetSN = a.AssetSN,
+                    AssetName = a.AssetName,
+                    LastClosedEM = em.EMEndDate,
+                    NumberOfEMs = db.EmergencyMaintenances
+                        .Where(em => em.AssetId == a.Id)
+                        .Count()
+                }
+                ).ToList();
         }
     }
 }
