@@ -13,7 +13,7 @@ namespace KazanNeft.Models
         public int Id { get; set; }
         public int DepartmentId { get; set; }
         public int LocationId { get; set; }
-        public DateOnly StartDate { get; set; }
-        public DateOnly EndDate { get; set; }
+        public DateOnly? StartDate { get; set; }
+        public DateOnly? EndDate { get; set; }
     }
 }

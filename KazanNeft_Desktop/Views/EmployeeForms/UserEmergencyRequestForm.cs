@@ -32,7 +32,10 @@ namespace KazanNeft_Desktop.Views.EmployeeForms
         }
         public void SetPriorityValues(IList<Priority> priorities)
         {
-            priorityCb.DataSource = priorities;
+            foreach (Priority name in priorities)
+            {
+                priorityCb.Items.Add(name.Name);
+            }
         }
         private string GetDepartmentBySN(int id)
         {
